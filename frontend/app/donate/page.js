@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { ethers } from "ethers";
 import Navbar from "../../components/layout/Navbar";
@@ -18,6 +18,26 @@ import {
 } from "../../lib/web3";
 
 export default function DonatePage() {
+	return (
+		<Suspense
+			fallback={
+				<div className="relative min-h-screen bg-white text-slate-900 dark:bg-[#05080c] dark:text-slate-100">
+					<main className="px-4 pb-16 pt-24">
+						<div className="mx-auto max-w-3xl">
+							<Card className="p-8" hover={false}>
+								<div className="text-sm text-slate-600 dark:text-slate-400">Loading donation page…</div>
+							</Card>
+						</div>
+					</main>
+				</div>
+			}
+		>
+			<DonatePageInner />
+		</Suspense>
+	);
+}
+
+function DonatePageInner() {
 	const searchParams = useSearchParams();
 	const [account, setAccount] = useState("");
 	const [network, setNetwork] = useState("");
