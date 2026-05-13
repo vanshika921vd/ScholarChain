@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export function getBackendUrl() {
-	return process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000";
+	return process.env.NEXT_PUBLIC_BACKEND_URL || "https://scholarchain-production.up.railway.app";
 }
 
 export function getToken() {

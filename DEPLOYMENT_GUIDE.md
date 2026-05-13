@@ -15,7 +15,7 @@ Create a `.env.local` file in the `frontend` directory:
 ```env
 NEXT_PUBLIC_RPC_URL=https://eth-sepolia.g.alchemy.com/v2/REPLACE
 NEXT_PUBLIC_SCHOLARCHAIN_ADDRESS=0xYourDeployedContractAddress
-NEXT_PUBLIC_BACKEND_URL=http://localhost:5000
+NEXT_PUBLIC_BACKEND_URL=https://scholarchain-production.up.railway.app
 ```
 
 ### 2. Install Dependencies
